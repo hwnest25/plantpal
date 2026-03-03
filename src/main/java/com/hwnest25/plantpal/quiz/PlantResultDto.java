@@ -1,51 +1,65 @@
 package com.hwnest25.plantpal.quiz;
-// import java.util.List;
+
+import java.util.List;
 
 public class PlantResultDto {
-    
-    private String plantName;
-    private String scientificName;
-    private String plantDescription;
-    private String imageUrl;
 
-    private String funFact;
-    private String environment;
-    private String careLevel;
-    private String growthSpeed;
+    private String plantName;
+    private String plantScientificName;
+    private String plantDescription;
+    private String plantImageUrl;
+
+    private String plantFunFact;
+    private String plantEnvironment;
+    private String plantCareLevel;
+    private String plantGrowthSpeed;
+
     private boolean petSafe;
     private boolean edible;
 
-    // private List<String> matchingCriteria;
+    private List<String> plantMatchReasons;
 
-    public PlantResultDto() {}
+    /**
+     * Default constructor required for JSON serialization/deserialization.
+     */
+
+    public PlantResultDto() {
+        // No-args constructor
+
+    }
 
     public String getPlantName() { return plantName; }
     public void setPlantName(String plantName) { this.plantName = plantName; }
 
-    public String getPlantScientificName() { return scientificName;}
-    public void setScientificName(String scientificName) { this.scientificName = scientificName; }
+    public String getPlantScientificName() { return plantScientificName; }
+    public void setPlantScientificName(String plantScientificName) { this.plantScientificName = plantScientificName; }
 
     public String getPlantDescription() { return plantDescription; }
     public void setPlantDescription(String plantDescription) { this.plantDescription = plantDescription; }
 
-    public boolean isPlantEdible() { return edible; }
-    public void setEdible(boolean edible) { this.edible = edible; }
+    public String getPlantImageUrl() { return plantImageUrl; }
+    public void setPlantImageUrl(String plantImageUrl) { this.plantImageUrl = plantImageUrl; }
 
-    public String getPlantImageUrl() { return imageUrl; }
-    public void setPlantImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
+    public String getPlantFunFact() { return plantFunFact; }
+    public void setPlantFunFact(String plantFunFact) { this.plantFunFact = plantFunFact; }
 
-    public String getPlantFunFact() { return funFact; }
-    public void setPlantFunFact(String funFact) { this.funFact = funFact; }
+    public String getPlantEnvironment() { return plantEnvironment; }
+    public void setPlantEnvironment(String plantEnvironment) { this.plantEnvironment = plantEnvironment; }
 
-    public String getPlantEnvironment() { return environment; }
-    public void setPlantEnvironment(String environment) { this.environment = environment; }
+    public String getPlantCareLevel() { return plantCareLevel; }
+    public void setPlantCareLevel(String plantCareLevel) { this.plantCareLevel = plantCareLevel; }
 
-    public String getPlantCareLevel() { return careLevel; }
-    public void setPlantCareLevel(String careLevel) { this.careLevel = careLevel; }
-
-    public String getPlantGrowthSpeed() { return growthSpeed; }
-    public void setPlantGrowthSpeed(String growthSpeed) { this.growthSpeed = growthSpeed; }
+    public String getPlantGrowthSpeed() { return plantGrowthSpeed; }
+    public void setPlantGrowthSpeed(String plantGrowthSpeed) { this.plantGrowthSpeed = plantGrowthSpeed; }
 
     public boolean isPetSafe() { return petSafe; }
     public void setPetSafe(boolean petSafe) { this.petSafe = petSafe; }
+
+    public boolean isEdible() { return edible; }
+    public void setEdible(boolean edible) { this.edible = edible; }
+
+    public List<String> getPlantMatchReasons() { return plantMatchReasons; }
+    public void setPlantMatchReasons(List<String> plantMatchReasons) {
+        this.plantMatchReasons = plantMatchReasons;
+    }
 }
