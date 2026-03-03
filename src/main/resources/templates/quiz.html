@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>PlantPal Quiz</title>
+  <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+  <main class="container">
+    <h1>PlantPal Quiz</h1>
+
+    <form th:action="@{/result}" th:object="${answers}" method="post" class="card">
+
+      <fieldset class="q">
+        <legend>Where will your plant live?</legend>
+        <label><input type="radio" th:field="*{plantEnvironmentPreference}" value="INDOOR" required> Indoors</label>
+        <label><input type="radio" th:field="*{plantEnvironmentPreference}" value="OUTDOOR"> Outdoors</label>
+        <label><input type="radio" th:field="*{plantEnvironmentPreference}" value="BOTH"> Both</label>
+      </fieldset>
+
+      <fieldset class="q">
+        <legend>Care level?</legend>
+        <label><input type="radio" th:field="*{plantCareLevelPreference}" value="EASY" required> Easy</label>
+        <label><input type="radio" th:field="*{plantCareLevelPreference}" value="MEDIUM"> Medium</label>
+        <label><input type="radio" th:field="*{plantCareLevelPreference}" value="HARD"> Hard</label>
+      </fieldset>
+
+      <fieldset class="q">
+        <legend>Growth speed?</legend>
+        <label><input type="radio" th:field="*{plantGrowthSpeedPreference}" value="FAST" required> Fast</label>
+        <label><input type="radio" th:field="*{plantGrowthSpeedPreference}" value="MEDIUM"> Medium</label>
+        <label><input type="radio" th:field="*{plantGrowthSpeedPreference}" value="SLOW"> Slow</label>
+      </fieldset>
+
+      <fieldset class="q">
+        <legend>Pet safe?</legend>
+        <label><input type="radio" th:field="*{petSafePreference}" value="YES" required> Yes</label>
+        <label><input type="radio" th:field="*{petSafePreference}" value="NO"> No</label>
+        <label><input type="radio" th:field="*{petSafePreference}" value="DOES_NOT_MATTER"> Doesn’t matter</label>
+      </fieldset>
+
+      <fieldset class="q">
+        <legend>Edible?</legend>
+        <label><input type="radio" th:field="*{ediblePreference}" value="YES" required> Yes</label>
+        <label><input type="radio" th:field="*{ediblePreference}" value="NO"> No</label>
+        <label><input type="radio" th:field="*{ediblePreference}" value="DOES_NOT_MATTER"> Doesn’t matter</label>
+      </fieldset>
+
+      <button type="submit" class="btn">Get Recommendation</button>
+    </form>
+  </main>
+</body>
+</html>
+ 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Recommendation</title>
+  <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+  <main class="container">
+    <h1>Your Plant Recommendation(s)</h1>
+
+    <section class="plant-card">
+      <div class="plant-media">
+        <img class="plant-img"
+             th:src="@{'/' + ${plant.plantImageUrl}}"
+             th:alt="${plant.plantName}" />
+      </div>
+
+      <div class="plant-info">
+        <h2 class="plant-title" th:text="${plant.plantName}">Plant Name</h2>
+        <p class="plant-subtitle" th:text="${plant.plantScientificName}">Scientific Name</p>
+
+        <p class="plant-desc" th:text="${plant.plantDescription}">Plant description</p>
+
+        <div class="fun-fact">
+          <strong>Fun fact:</strong>
+          <span th:text="${plant.plantFunFact}">Fun fact</span>
+        </div>
+
+        <div class="attr-grid">
+          <div class="attr">
+            <div class="attr-label">Environment</div>
+            <div class="attr-value" th:text="${plant.plantEnvironment}">OUTDOOR</div>
+          </div>
+
+          <div class="attr">
+            <div class="attr-label">Care level</div>
+            <div class="attr-value" th:text="${plant.plantCareLevel}">EASY</div>
+          </div>
+
+          <div class="attr">
+            <div class="attr-label">Growth speed</div>
+            <div class="attr-value" th:text="${plant.plantGrowthSpeed}">FAST</div>
+          </div>
+
+          <div class="attr">
+            <div class="attr-label">Pet safe</div>
+            <div class="attr-value" th:text="${plant.petSafe} ? 'Yes' : 'No'">Yes</div>
+          </div>
+
+          <div class="attr">
+            <div class="attr-label">Edible</div>
+            <div class="attr-value" th:text="${plant.edible} ? 'Yes' : 'No'">No</div>
+          </div>
+        </div>
+
+        <div class="match-box" th:if="${plant.plantMatchReasons != null && !plant.plantMatchReasons.isEmpty()}">
+          <div class="match-title">Why this match?</div>
+          <ul class="match-list">
+            <li th:each="r : ${plant.plantMatchReasons}" th:text="${r}">Reason</li>
+          </ul>
+        </div>
+
+        <div class="actions">
+          <a class="btn" th:href="@{/quiz}">Retake Quiz</a>
+          <a class="btn secondary" th:href="@{/}">Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+ 
