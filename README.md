@@ -1,18 +1,25 @@
+
+https://github.com/hwnest25/plantpal/blob/main/src/main/resources/static/assets/Tech%20Stack_PlantPal%20Predictor.jpg 
 # 🌿 PlantPal  
 **Your perfect plant(s), predicted.** 
 
 **Are you a serial plant killer? If so, today is your lucky day.**
 
 
-PlantPal is a quiz-based plant recommendation web application built with **Spring Boot** and **Thymeleaf**.
+PlantPal is a smart plant recommendation system built with **Spring Boot** and **Thymeleaf**.
 
 Users answer a short set of questions about their environment and preferences. The system evaluates their responses against a structured plant dataset and returns a suitable plant recommendation.
 
 ---
 
+## Features
+- Quiz-based plant recommendation
+- Pet-safe filtering
+- Growth speed matching
+
 ## Overview
 
-PlantPal predicts which plant is best suited to a user’s:
+PlantPal predicts which plant(s) is best suited according to a user’s preferences on the following criteria:
 
 - Environment (Indoor / Outdoor / Both)
 - Care level (Easy / Medium / Hard)
@@ -31,7 +38,7 @@ The recommendation is generated through a scoring algorithm that compares user i
 - **Thymeleaf**
 - **Jackson (JSON processing)**
 
-Core concepts applied:
+**Core concepts applied:**
 
 - MVC architecture  
 - DTO pattern  
