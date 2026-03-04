@@ -10,7 +10,7 @@
 
     <main class="container-wide">
 
-        <h1>Plant Gallery</h1>
+        <h1>Potential Plant Pals:</h1>
 
         <div class="gallery-grid">
 
@@ -30,23 +30,23 @@
                 <p th:text="${plant.plantDescription}"></p>
 
                 <ul>
-                    <li>Environment:
+                    <li><strong>Environment:</strong>
                         <span th:text="${plant.plantEnvironment}"></span>
                     </li>
 
-                    <li>Care Level:
+                    <li><strong>Care Level:</strong>
                         <span th:text="${plant.plantCareLevel}"></span>
                     </li>
 
-                    <li>Growth Speed:
+                    <li><strong>Growth Speed:</strong>
                         <span th:text="${plant.plantGrowthSpeed}"></span>
                     </li>
 
-                    <li>Pet Safe:
+                    <li><strong>Pet Safe:</strong>
                         <span th:text="${plant.petSafe} ? 'Yes' : 'No'"></span>
                     </li>
                     
-                    <li>Edible:
+                    <li><strong>Edible:</strong>
                         <span th:text="${plant.edible} ? 'Yes' : 'No'"></span>
                     </li>
 
