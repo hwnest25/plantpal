@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Plants</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+
+<body>
+<main class="container-wide">
+
+    <h1>Search Plants</h1>
+
+    <!-- FILTER FORM -->
+    <form method="get"
+          th:action="@{/search}"
+          class="card filter-form">
+
+        <div class="filter-grid">
+
+            <!-- Name -->
+            <div class="form-group">
+                <label for="plantName">Name contains</label>
+                <input id="plantName"
+                       type="text"
+                       name="plantName"
+                       th:value="${criteria.plantName}"
+                       class="input">
+            </div>
+
+            <!-- Environment (no "Any" option; placeholder only) -->
+            <div class="form-group">
+                <label for="plantEnvironment">Environment</label>
+                <select id="plantEnvironment"
+                        name="plantEnvironment"
+                        class="input">
+                    <option value="" disabled
+                            th:selected="${criteria.plantEnvironment} == null">
+                        Choose environment
+                    </option>
+
+                    <option th:each="e : ${plantEnvironmentOptions}"
+                            th:value="${e.name()}"
+                            th:text="${#strings.capitalize(e.name().toLowerCase())}"
+                            th:selected="${criteria.plantEnvironment} == ${e}">
+                    </option>
+                </select>
+            </div>
+
+            <!-- Care Level (no "Any" option; placeholder only) -->
+            <div class="form-group">
+                <label for="plantCareLevel">Care level</label>
+                <select id="plantCareLevel"
+                        name="plantCareLevel"
+                        class="input">
+                    <option value="" disabled
+                            th:selected="${criteria.plantCareLevel} == null">
+                        Choose care level
+                    </option>
+
+                    <option th:each="c : ${plantCareLevelOptions}"
+                            th:value="${c.name()}"
+                            th:text="${#strings.capitalize(c.name().toLowerCase())}"
+                            th:selected="${criteria.plantCareLevel} == ${c}">
+                    </option>
+                </select>
+            </div>
+
+            <!-- Growth Speed (no "Any" option; placeholder only) -->
+            <div class="form-group">
+                <label for="plantGrowthSpeed">Growth speed</label>
+                <select id="plantGrowthSpeed"
+                        name="plantGrowthSpeed"
+                        class="input">
+                    <option value="" disabled
+                            th:selected="${criteria.plantGrowthSpeed} == null">
+                        Choose growth speed
+                    </option>
+
+                    <option th:each="g : ${plantGrowthSpeedOptions}"
+                            th:value="${g.name()}"
+                            th:text="${#strings.capitalize(g.name().toLowerCase())}"
+                            th:selected="${criteria.plantGrowthSpeed} == ${g}">
+                    </option>
+                </select>
+            </div>
+
+            <!-- Pet Safe -->
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox"
+                           name="petSafe"
+                           value="true"
+                           th:checked="${criteria.petSafe} == true">
+                    Pet Safe Only
+                </label>
+            </div>
+
+            <!-- Edible -->
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox"
+                           name="edible"
+                           value="true"
+                           th:checked="${criteria.edible} == true">
+                    Edible Only
+                </label>
+            </div>
+
+        </div>
+
+        <div class="actions">
+            <button class="btn" type="submit">Apply Filters</button>
+            <a class="btn secondary" th:href="@{/search}">Clear</a>
+            <a class="btn secondary" th:href="@{/plants}">Browse All</a>
+        </div>
+
+    </form>
+
+    <!-- RESULTS -->
+    <section class="results-section">
+        <h2>Results</h2>
+
+        <p th:if="${#lists.isEmpty(plants)}">
+            No plants match your filters.
+        </p>
+
+        <div class="gallery-grid" th:if="${!#lists.isEmpty(plants)}">
+
+            <article class="gallery-card"
+                     th:each="plant : ${plants}">
+
+                <img class="gallery-img"
+                     th:src="@{'/' + ${plant.plantImageUrl}}"
+                     th:alt="${plant.plantName + ' image'}">
+
+                <h3 class="gallery-title"
+                    th:text="${plant.plantName}">
+                </h3>
+
+                <p class="gallery-subtitle"
+                   th:text="${plant.plantScientificName}">
+                </p>
+
+                <div class="gallery-attr">
+                    <strong>Environment:</strong>
+                    <span th:text="${#strings.capitalize(plant.plantEnvironment.name().toLowerCase())}"></span>
+                </div>
+
+                <div class="gallery-attr">
+                    <strong>Care:</strong>
+                    <span th:text="${#strings.capitalize(plant.plantCareLevel.name().toLowerCase())}"></span>
+                </div>
+
+                <div class="gallery-attr">
+                    <strong>Growth:</strong>
+                    <span th:text="${#strings.capitalize(plant.plantGrowthSpeed.name().toLowerCase())}"></span>
+                </div>
+
+                <div class="gallery-attr">
+                    <strong>Pet Safe:</strong>
+                    <span th:text="${plant.petSafe ? 'Yes' : 'No'}"></span>
+                </div>
+
+                <div class="gallery-attr">
+                    <strong>Edible:</strong>
+                    <span th:text="${plant.edible ? 'Yes' : 'No'}"></span>
+                </div>
+
+            </article>
+
+        </div>
+    </section>
+
+</main>
+</body>
+</html>

@@ -289,3 +289,29 @@ input[type="radio"]{
 @media (max-width: 600px){
   .gallery-grid{ grid-template-columns: 1fr; }
 }
+
+/* ---------- Search Filters ---------- */
+
+.filter-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-group{
+  justify-content: center;
+}
+
+.input{
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.08);
+  color: var(--text);
+}
