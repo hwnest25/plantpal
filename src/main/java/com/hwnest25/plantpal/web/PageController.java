@@ -16,11 +16,9 @@ public class PageController {
     private final QuizService quizService;
     private final PlantRepository plantRepository;
 
-    public PageController(QuizService quizService) {
+    public PageController(QuizService quizService,
+                          PlantRepository plantRepository) {
         this.quizService = quizService;
-    }
-
-    public PageController(PlantRepository plantRepository) {
         this.plantRepository = plantRepository;
     }
 
