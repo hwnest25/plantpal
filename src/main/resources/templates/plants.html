@@ -1,54 +1,62 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8" />
     <title>Plant Gallery</title>
     <link rel="stylesheet" th:href="@{/styles.css}">
 </head>
 
 <body>
 
-<h1>Plant Gallery</h1>
+    <main class="container">
 
-<div class="gallery-grid">
+        <h1>Plant Gallery</h1>
 
-    <div class="plant-card" th:each="plant : ${plants}">
+        <div class="gallery-grid">
 
-        <img th:src="@{/${plant.plantImageUrl}}" alt="Plant image">
+            <div class="gallery-card" th:each="plant : ${plants}">
 
-        <h2 th:text="${plant.plantName}"></h2>
+                <img 
+                    class="gallery-img"
+                    th:src="@{'/' + ${plant.plantImageUrl}}" 
+                    alt="This is what the plant looks like.">
 
-        <p>
-            <em th:text="${plant.plantScientificName}"></em>
-        </p>
+                <h2 th:text="${plant.plantName != null ? plant.plantName : 'Plant Name'}">Plant Name</h2>
 
-        <p th:text="${plant.plantDescription}"></p>
+                <p>
+                    <em th:text="${plant.plantScientificName}"></em>
+                </p>
 
-        <ul>
-            <li>Environment:
-                <span th:text="${plant.plantEnvironment}"></span>
-            </li>
+                <p th:text="${plant.plantDescription}"></p>
 
-            <li>Care Level:
-                <span th:text="${plant.plantCareLevel}"></span>
-            </li>
+                <ul>
+                    <li>Environment:
+                        <span th:text="${plant.plantEnvironment}"></span>
+                    </li>
 
-            <li>Growth Speed:
-                <span th:text="${plant.plantGrowthSpeed}"></span>
-            </li>
+                    <li>Care Level:
+                        <span th:text="${plant.plantCareLevel}"></span>
+                    </li>
 
-            <li>Pet Safe:
-                <span th:text="${plant.petSafe} ? 'Yes' : 'No'"></span>
-            </li>
-            
-            <li>Edible:
-                <span th:text="${plant.edible} ? 'Yes' : 'No'"></span>
-            </li>
-            
-        </ul>
+                    <li>Growth Speed:
+                        <span th:text="${plant.plantGrowthSpeed}"></span>
+                    </li>
 
-    </div>
+                    <li>Pet Safe:
+                        <span th:text="${plant.petSafe} ? 'Yes' : 'No'"></span>
+                    </li>
+                    
+                    <li>Edible:
+                        <span th:text="${plant.edible} ? 'Yes' : 'No'"></span>
+                    </li>
 
-</div>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </main>
 
 </body>
 </html>
