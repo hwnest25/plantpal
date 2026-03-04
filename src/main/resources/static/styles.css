@@ -26,9 +26,15 @@ body{
 }
 
 .container{
-  max-width: 1280px;
+  max-width: 980px;
   margin: 56px auto;
   padding: 0 18px;
+}
+
+.container-wide{
+    max-width: 1280px;
+    margin: 56px auto;
+    padding: 0 18px;
 }
 
 h1{
