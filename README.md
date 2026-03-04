@@ -1,6 +1,6 @@
 
-https://github.com/hwnest25/plantpal/blob/main/src/main/resources/static/assets/Tech%20Stack_PlantPal%20Predictor.jpg 
-# 🌿 PlantPal  
+
+# PlantPal  
 **Your perfect plant(s), predicted.** 
 
 **Are you a serial plant killer? If so, today is your lucky day.**
@@ -9,6 +9,8 @@ https://github.com/hwnest25/plantpal/blob/main/src/main/resources/static/assets/
 PlantPal is a smart plant recommendation system built with **Spring Boot** and **Thymeleaf**.
 
 Users answer a short set of questions about their environment and preferences. The system evaluates their responses against a structured plant dataset and returns a suitable plant recommendation.
+
+![Tech Stack](Tech_Stack_PlantPal_Predictor.jpg)
 
 ---
 
