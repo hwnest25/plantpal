@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Plant Gallery</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+
+<body>
+
+<h1>Plant Gallery</h1>
+
+<div class="gallery-grid">
+
+    <div class="plant-card" th:each="plant : ${plants}">
+
+        <img th:src="@{/${plant.plantImageUrl}}" alt="Plant image">
+
+        <h2 th:text="${plant.plantName}"></h2>
+
+        <p>
+            <em th:text="${plant.plantScientificName}"></em>
+        </p>
+
+        <p th:text="${plant.plantDescription}"></p>
+
+        <ul>
+            <li>Environment:
+                <span th:text="${plant.plantEnvironment}"></span>
+            </li>
+
+            <li>Care Level:
+                <span th:text="${plant.plantCareLevel}"></span>
+            </li>
+
+            <li>Growth Speed:
+                <span th:text="${plant.plantGrowthSpeed}"></span>
+            </li>
+
+            <li>Pet Safe:
+                <span th:text="${plant.petSafe} ? 'Yes' : 'No'"></span>
+            </li>
+            
+            <li>Edible:
+                <span th:text="${plant.edible} ? 'Yes' : 'No'"></span>
+            </li>
+            
+        </ul>
+
+    </div>
+
+</div>
+
+</body>
+</html>
