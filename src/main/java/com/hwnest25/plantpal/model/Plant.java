@@ -14,10 +14,10 @@ public class Plant {
     
     
     public Plant() { /* 
-
         // Default constructor for JSON deserialization
-    
     */}
+
+    
 
         public String getPlantName() { return plantName; }
         public void setPlantName(String plantName) { this.plantName = plantName; }
