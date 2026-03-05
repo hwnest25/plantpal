@@ -5,21 +5,35 @@
   <title>PlantPal</title>
   <link rel="stylesheet" th:href="@{/styles.css}">
 </head>
+
 <body>
-  <main class="container">
-    <nav class="page-nav actions" style="margin: 0 0 14px 0;">
-        <a class="btn secondary" th:href="@{/}">Home</a>
-        <a class="btn secondary" th:href="@{/quiz}">Quiz</a>
-        <a class="btn secondary" th:href="@{/plants}">Gallery</a>
-        <a class="btn secondary" th:href="@{/search}">Search</a>
-    </nav>
-    <h1>PlantPal</h1>
-    <p>Answer a few questions to get a plant pal recommendation.</p>
-    <a class="btn" th:href="@{/quiz}">Start Quiz</a>
-    <a class="btn secondary" th:href="@{/plants}">Browse All Plants</a>
-    <a class="btn secondary" th:href="@{/search}">Search Plants</a>
- 
-  </main>
+<main class="container-wide">
+
+  <nav class="page-nav actions">
+    <a class="btn secondary" th:href="@{/}">Home</a>
+    <a class="btn secondary" th:href="@{/quiz}">Quiz</a>
+    <a class="btn secondary" th:href="@{/plants}">Gallery</a>
+    <a class="btn secondary" th:href="@{/search}">Search</a>
+  </nav>
+
+  <section class="home-hero">
+    <div class="home-hero-top">
+      <h1>Welcome to Plant Pal</h1>
+
+      <div class="actions">
+        <a class="btn" th:href="@{/quiz}">Start Quiz</a>
+        <a class="btn secondary" th:href="@{/plants}">Browse Gallery</a>
+        <a class="btn secondary" th:href="@{/search}">Search Plants</a>
+      </div>
+    </div>
+
+    <div class="home-hero-media">
+      <img class="home-hero-img"
+           th:src="@{/assets/plant_pal_all_plants.png}"
+           alt="A collage of plant images featured in PlantPal">
+    </div>
+  </section>
+
+</main>
 </body>
 </html>
- 

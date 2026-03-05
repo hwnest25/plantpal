@@ -10,8 +10,8 @@ public class PlantSearchCriteria {
     private PlantEnvironment plantEnvironment;
     private PlantCareLevel plantCareLevel;
     private PlantGrowthSpeed plantGrowthSpeed;
-    private Boolean petSafe;
-    private Boolean edible;
+    private Boolean petSafe; // Keep as wrapper Boolean to all for null (no preference) values in search results.
+    private Boolean edible; // Keep as wrapper Boolean to all for null (no preference) values in search results.
 
     public String getPlantName() { return plantName; }
     public void setPlantName(String plantName) { this.plantName = plantName; }

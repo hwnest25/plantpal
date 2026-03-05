@@ -19,12 +19,9 @@ public class PlantResultDto {
 
     private List<String> plantMatchReasons;
 
-    /**
-     * Default constructor required for JSON serialization/deserialization.
-     */
 
     public PlantResultDto() {
-        // No-args constructor
+     // ... 
 
     }
 

@@ -17,24 +17,22 @@
 
     <h1>Search Plants</h1>
 
-    <!-- FILTER FORM -->
     <form method="get"
           th:action="@{/search}"
           class="card filter-form">
 
         <div class="filter-grid">
 
-            <!-- Name -->
             <div class="form-group">
                 <label for="plantName">Name contains</label>
                 <input id="plantName"
                        type="text"
                        name="plantName"
+                       placeholder="Enter the plant name"
                        th:value="${criteria.plantName}"
                        class="input">
             </div>
 
-            <!-- Environment (no "Any" option; placeholder only) -->
             <div class="form-group">
                 <label for="plantEnvironment">Environment</label>
                 <select id="plantEnvironment"
@@ -53,7 +51,6 @@
                 </select>
             </div>
 
-            <!-- Care Level (no "Any" option; placeholder only) -->
             <div class="form-group">
                 <label for="plantCareLevel">Care level</label>
                 <select id="plantCareLevel"
@@ -72,7 +69,6 @@
                 </select>
             </div>
 
-            <!-- Growth Speed (no "Any" option; placeholder only) -->
             <div class="form-group">
                 <label for="plantGrowthSpeed">Growth speed</label>
                 <select id="plantGrowthSpeed"
@@ -91,7 +87,6 @@
                 </select>
             </div>
 
-            <!-- Pet Safe -->
             <div class="form-group checkbox-group">
                 <label>
                     <input type="checkbox"
@@ -102,7 +97,6 @@
                 </label>
             </div>
 
-            <!-- Edible -->
             <div class="form-group checkbox-group">
                 <label>
                     <input type="checkbox"
