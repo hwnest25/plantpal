@@ -138,10 +138,10 @@
     "edible": false,
     "plantImageUrl": "plant_images/cactus.jpg",
     "plantFunFact": "Many cacti store water in their stems to survive long dry periods.",
-    "plantEnvironment": "INDOOR",
+    "plantEnvironment": "BOTH",
     "plantCareLevel": "EASY",
     "plantGrowthSpeed": "SLOW",
-    "petSafe": true
+    "petSafe": false
   },
   {
     "plantName": "Lemon",
